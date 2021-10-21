@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: react
+  template:
+    metadata:
+      name: react
+      labels:
+        app: react
+    spec:
+      containers:
+        - image: reactdemo:dev
+          name: react
